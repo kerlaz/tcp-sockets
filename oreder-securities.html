@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @media print {
+            table {
+                page-break-inside: avoid;
+                page-break-after: auto
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto
+            }
+
+            td {
+                page-break-inside: avoid;
+                page-break-after: auto
+            }
+
+            thead {
+                display: table-header-group
+            }
+
+            tfoot {
+                display: table-footer-group
+            }
+        }
+
+        * {
+            font-size: 14px;
+            font-family: Calibri, sans-serif;
+        }
+
+        table {
+            border-spacing: 0;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        td {
+            width: 50%;
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        h4 {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .clearance {
+            clear: both;
+        }
+
+        .checkbox-title {
+            float: left;
+            flex-grow: 0;
+            width: 35%;
+            align-items: center;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .mini-checkboxes .checkbox-group-title {
+            float: left;
+            padding-top: 15px;
+            width: auto;
+        }
+
+        .mini-checkboxes .checkbox-title {
+            margin: 15px 20px 0 50px;
+            width: auto;
+        }
+
+        .checkbox {
+            float: left;
+            flex-grow: 0;
+            width: 30px;
+            height: 25px;
+            margin: 10px 30px 10px 0;
+            /*padding: 10px 0 0 10px;*/
+            border: 1px solid black;
+        }
+
+        .checkbox img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .sign-doc p {
+            float: left;
+            font-size: 12px;
+            border-top: 1px solid black;
+            text-align: center;
+        }
+
+        .sign-doc-sign {
+            float: left;
+            width: 35%
+        }
+
+        .sign-doc-mp {
+            float: left;
+            width: auto;
+            margin-right: 10px;
+            padding-right: 40px;
+        }
+
+        .sign-doc-fio {
+            float: left;
+            padding-left: 40px;
+            width: auto
+        }
+
+        .sign-doc-position {
+            width: 35%
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper" style="width: 600px;margin: auto;">
+    <header style="display: flex; justify-content: space-between;">
+        <div id="logo">
+            <img style="width: 190px; float: left" src="/app/logo.png" alt="Logo">
+        </div>
+        <div id="requisite" style="text-align: right;">
+            <br>АО "FIRST HEARTLAND SECURITIES"
+            <br>Республика Казахстан, A26F8T9,
+            <br>г. Алматы, Медеуский район,
+            <br>проспект Нұрсұлтан Назарбаев, 242.
+            <br>Телефоны: +77273442900
+            <br>E-mail: info@fhs.kz
+        </div>
+        <div class="clearance"></div>
+    </header>
+    <br>
+    <h4 style="text-align: center">Клиентский заказ №
+        <br>на покупку/продажу ценных бумаг в АО "First Heartland Securities" </h4>
+    <table>
+        <tbody>
+        <tr>
+            <td>Наименование/ФИО Клиентa</td>
+            <td>ABJ</td>
+        </tr>
+        <tr>
+            <td>Номер лицевого счета</td>
+            <td>834765934859</td>
+        </tr>
+        <tr>
+            <td>Номер и дата договора</td>
+            <td>1234 - 05.07.2022</td>
+        </tr>
+        <tr>
+            <td>БИН/ИИН</td>
+            <td>123456789012</td>
+        </tr>
+        </tbody>
+    </table>
+    <h4>поручает заключить сделку со следующими параметрами: </h4>
+    <div class="checkboxes">
+        <div class="checkbox-title">Покупка</div>
+        <div class="checkbox">
+
+        </div>
+        <div class="checkbox-title">Продажа</div>
+        <div class="checkbox">
+        </div>
+        <div class="checkbox-title">Без центрального контрагента</div>
+        <div class="checkbox">
+        </div>
+    </div>
+    <div class="clearance"></div>
+    <br>
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="2" style="text-align: center">Финансовый инструмент:</td>
+        </tr>
+        <tr>
+            <td>Наименование эмитента</td>
+            <td>Emitent name</td>
+        </tr>
+        <tr>
+            <td>Вид ценной бумаги</td>
+            <td>${order.securityType}</td>
+        </tr>
+        <tr>
+            <td>Код ценной бумаги (при наличии)</td>
+            <td>${order.securityCode}</td>
+        </tr>
+        <tr>
+            <td>ISIN ценной бумаги</td>
+            <td>${order.securityIsin}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="checkboxes mini-checkboxes">
+        <div class="checkbox-group-title"><b>Наличие рекомендаций брокера: </b></div>
+        <div class="checkbox-title">Да</div>
+        <div class="checkbox">
+        </div>
+        <div class="checkbox-title">Нет</div>
+        <div class="checkbox">
+        </div>
+    </div>
+    <div class="clearance"></div>
+    <br>
+    <div class="checkboxes mini-checkboxes">
+        <div class="checkbox-group-title"><b>Тип заказа:</b></div>
+        <div class="checkbox-title">Лимитный</div>
+        <div class="checkbox">
+        </div>
+        <div class="checkbox-title">Рыночный</div>
+        <div class="checkbox">
+        </div>
+        <div class="checkbox-title" style="clear: both">Буферный</div>
+        <div class="checkbox">
+        </div>
+    </div>
+    <div class="clearance"></div>
+    <table>
+        <tr>
+            <td style="width: 15%; text-align: center" rowspan="4">Для облигаций</td>
+            <td style="width: 35%">Чистая цена (% от номинала)</td>
+            <td style="width: 50%">${order.obligationNetPrice}</td>
+        </tr>
+        <tr>
+            <td style="width: 35%">Количество по номиналу</td>
+            <td style="width: 50%">${order.obligationValueQuantity}</td>
+        </tr>
+        <tr>
+            <td style="width: 35%">Грязная цена</td>
+            <td style="width: 50%">${order.obligationDirtyPrice}</td>
+        </tr>
+        <tr>
+            <td style="width: 35%">Доходность к погашению (% годовых)</td>
+            <td style="width: 50%">${order.obligationYieldToMaturity}</td>
+        </tr>
+        <tr>
+            <td style="width: 15%; text-align: center" rowspan="3">Для акций</td>
+            <td style="width: 35%">Количество ценных бумаг (штук)</td>
+            <td style="width: 50%">${order.stockSecurityQuantity}</td>
+        </tr>
+        <tr>
+            <td style="width: 35%">Условие цены</td>
+            <td style="width: 50%">${order.stockPriceCondition}</td>
+        </tr>
+        <tr>
+            <td style="width: 35%">Цена одной ценной бумаги</td>
+            <td style="width: 50%">${order.stockSecurityPiecePrice}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="width: 50%">Сумма сделки</td>
+            <td style="width: 50%">${order.dealAmount}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="width: 50%">Валюта сделки</td>
+            <td style="width: 50%">${order.dealCurrency}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="width: 50%">Дата начала действия заказа (в случае отсутствия данных, заказ действует
+                с даты регистрации заказа)
+            </td>
+            <td style="width: 50%">${order.orderStartDate}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="width: 50%">Дата истечения срока действия настоящего заказа (в случае отсутствия
+                данных, заказ действует 1 день )
+            </td>
+            <td style="width: 50%">${order.orderDueDate}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="width: 50%">Дополнительная информация</td>
+            <td style="width: 50%">${order.additionalInfo}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
